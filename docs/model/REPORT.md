@@ -4,7 +4,7 @@
 
 ```python
 
-  Modelo escolhido: 11 neurônios na camada de entrada e 1 na camada de saída```
+  Modelo escolhido: 11 neurônios na camada de entrada e 1 na camada de saída
 
       TP: 54,2%
       TN: 21,8%
