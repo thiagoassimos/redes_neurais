@@ -25,13 +25,13 @@ Embora o algoritmo _Adam_ possua convergência mais rápida, a escolha é pelo `
 
 **Métrica utilizada**
 
-```F1-Score```
+```F-Beta-Score```
 
 Estamos lidando com um problema de classificação binária, do tipo: 
 - 1 para vinhos bons; 
 - 0 para vinhos ruins. 
   
-Então, deve ser dada uma ênfase maior para os erros por falso positivo (vinho ruim classificado como bom) e falso negativo (vinho bom classificado como ruim), respectivamente essas métricas são a _precision_ e a _recall_. Sendo assim, seria mais interessante usar a média harmônica entre elas que é definida pela _f1-score_, ou seja, um valor alto de _f1-score_ só ocorrerá se a _recall_ e _precision_ forem altas. Além disso, a _f1-score_ também é uma boa métrica para trabalhar com classes desbalanceadas, que é o caso deste problema, onde temos aproximadamente 66,51% de vinhos classificados como bons e 33,49% classificados como ruins.
+Então, deve ser dada uma ênfase maior para os erros por falso positivo (vinho ruim classificado como bom) e falso negativo (vinho bom classificado como ruim), respectivamente essas métricas são a _precision_ e a _recall_. Sendo assim, seria mais interessante usar a média harmônica entre elas que é definida pela _f-beta score_, ou seja, um valor alto de _fbeta score_ só ocorrerá se a _recall_ e _precision_ forem altas. Além disso, a _f-beta score_ também é uma boa métrica para trabalhar com classes desbalanceadas, que é o caso deste problema, onde temos aproximadamente 66,51% de vinhos classificados como bons e 33,49% classificados como ruins.
 
 # Resultados
 
@@ -41,18 +41,18 @@ Então, deve ser dada uma ênfase maior para os erros por falso positivo (vinho 
 
   Modelo escolhido: 11 neurônios na camada de entrada e 1 na camada de saída
 
-      TP: 54,2%
-      TN: 21,8%
-      FP: 11,7%
-      FN: 12,3%  
+      TP: 53,7%
+      TN: 22,7%
+      FP: 10,8%
+      FN: 12,8%  
 ```
 
 ```python
 
-  Métrica: F1-Score
+  Métrica: F-Beta Score
 
       0: 0.64
-      1: 0.82
+      1: 0.83
   Lembrando que 0 só diz respeito à taxa de TN e 1 à taxa de TP.
 ```
 
@@ -63,8 +63,8 @@ Então, deve ser dada uma ênfase maior para os erros por falso positivo (vinho 
 
 Um ponto que deve ser relatado para a apresentação dos resultados é que há um desbalanceamento de classes em relação à quantidade de vinhos bons e ruins no dataset (temos mais vinhos bons do que vinhos ruins).
 
-A partir da análise da matriz de confusão podemos inferir que o modelo apresenta bons resultados, com uma taxa total de acerto de 75,9% (TP+TN) e 24,1% de erro (FP+FN). 
+A partir da análise da matriz de confusão podemos inferir que o modelo apresenta bons resultados, com uma taxa total de acerto de 76,4% (TP+TN) e 23,6% de erro (FP+FN). 
 
-Uma outra observação é que aumentar a quantidade de neurônios não vai produzir melhora nos resultados, pois com 22 e 33 neurônios os resultados mantiveram-se praticamente os mesmos. 
+Uma outra observação é que aumentar a quantidade de neurônios não vai produzir melhora nos resultados, pois com 22 e 33 neurônios os resultados mantiveram-se foram ligeiramente inferiores a 11 neurônios. 
 
- No caso dos histogramas,  podemos dizer que os dados de treino e teste possuem  amplitudes semelhantes, indicando que o modelo não está se adaptando demais aos dados de treino. Isso é um bom sinal quando se leva em conta a capacidade de generalização do modelo para novos conjuntos de dados.
+ No caso dos histogramas, podemos dizer que os dados de treino e teste possuem amplitudes semelhantes, indicando que o modelo não está se adaptando demais aos dados de treino. Isso é um bom sinal quando se leva em conta a capacidade de generalização do modelo para novos conjuntos de dados.
