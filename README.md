@@ -3,11 +3,11 @@
 Os dois conjuntos de dados estão relacionados com variantes tintas e brancas do vinho português “Vinho Verde”. A referência [Cortez et al., 2009]. Devido a questões de privacidade e logística, apenas estão disponíveis variáveis físico-químicas (entradas) e sensoriais (saída) (por exemplo, não existem dados sobre tipos de uva, marca do vinho, preço de venda do vinho, etc.).
 As classes são ordenadas e não equilibradas (ex. há muito mais vinhos normais do que excelentes ou ruins). Algoritmos de detecção de valores discrepantes poderiam ser usados para detectar alguns vinhos excelentes ou ruins. Além disso, não temos certeza se todas as variáveis de entrada são relevantes. 
 
-Vamos usar redes neurais para classificar esses vinhos como bons ou ruins.
+## Modelagem
 
-Neste modelo de rede neural serão usadas **```2 camadas```**: **```1 de entrada```** e **```1 de saída```**, com **```11 neurônios na camada de entrada```** e **```1 na camada de saída```**. Como só temos 1 classe binária então vamos usar 1 neurônio por classe, já que o valor produzido por esse neurônio será interpretado como a probabilidade do vinho pertencer à classe positiva. Isso justifica o fato de não utilizarmos neurônios nas camadas intermediárias.
+Vamos usar redes neurais para classificar esses vinhos como bons ou ruins. Neste modelo serão usadas **```2 camadas```**: **```1 de entrada```** e **```1 de saída```**, com **```11 neurônios na camada de entrada```** e **```1 na camada de saída```**. Como só temos 1 classe binária então vamos usar 1 neurônio por classe, já que o valor produzido por esse neurônio será interpretado como a probabilidade do vinho pertencer à classe positiva. Isso justifica o fato de não utilizarmos neurônios nas camadas intermediárias.
 
-Algoritmo implementado para treinamento é o **```backpropagation```**.
+O algoritmo implementado para treinamento será o **```backpropagation```**.
 
 ## ```Funções de ativação```
 
@@ -59,7 +59,7 @@ Então, deve ser dada uma ênfase maior para os erros por falso positivo (vinho 
 
 ## Considerações finais
 
-Um ponto que deve ser relatado para a apresentação dos resultados é que há um desbalanceamento de classes em relação à quantidade de vinhos bons e ruins no dataset (temos mais vinhos bons do que vinhos ruins).
+Um ponto que deve ser relatado para a apresentação dos resultados é que há um desbalanceamento de classes em relação à quantidade de vinhos bons e ruins no dataset (temos mais vinhos bons do que vinhos ruins) e por isso foi utilizado a métrica **```f-beta score```** que para tratar melhor este desbalanceamento.
 
 A partir da análise da matriz de confusão podemos inferir que o modelo apresenta bons resultados, com uma taxa total de acerto de **```76,4% (TP+TN)```** e de erro **```23,6% (FP+FN)```**. 
 
