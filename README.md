@@ -19,7 +19,7 @@ A escolha pela **```relu```** na camada de entrada é porque como os neurônios 
 
 Na camada de saída a escolha pela **```sigmóide```** se deve ao fato dela transformar a saída da última camada em um valor no intervalo entre 0 e 1, representando uma probabilidade. Como este é um problema de classificação binária, esse valor pode ser interpretado como a probabilidade de pertencer à classe positiva, como dito anteriormente. Além disso a sigmóide é uma função de classe $C^\infty$, ou seja, todas as suas derivadas são contínuas, o que facilita o cálculo dos gradientes durante o treinamento quando se usa, por exemplo, o **```backpropagation```**. Ela também ajuda a evitar o problema de "explodir" gradientes, que pode ocorrer durante o treinamento de redes neurais mais profundas, pois limita a saída entre 0 e 1, evitando esses valores extremamente grandes.
 
-## Função de otimização
+## ```Função de otimização```
 
 Embora o algoritmo **```Adam```** possua convergência mais rápida, a escolha é pelo **```SGD```** devido ao fato dele generalizar melhor que o primeiro e assim apresentar melhores resultados.
 
