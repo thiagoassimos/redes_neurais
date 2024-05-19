@@ -1,7 +1,6 @@
 ## Descrição do problema
 
-Os dois conjuntos de dados estão relacionados com variantes tintas e brancas do vinho português “Vinho Verde” - referência [Cortez et al., 2009]. Devido a questões de privacidade e logística, apenas estão disponíveis variáveis físico-químicas (entradas) e sensoriais (saída) (por exemplo, não existem dados sobre tipos de uva, marca do vinho, preço de venda do vinho, etc.).
-As classes são ordenadas e não equilibradas (ex. há muito mais vinhos normais do que excelentes ou ruins). 
+O conjuntos de dados está relacionado com variantes tintas e brancas do vinho português "Vinho Verde - referência [Cortez et al., 2009]. Devido a questões de privacidade e logística, apenas estão disponíveis variáveis físico-químicas (entradas) e sensoriais (saída) (por exemplo, não existem dados sobre tipos de uva, marca do vinho, preço de venda do vinho, etc.). Além disso, as classes são ordenadas e não equilibradas (ex. há muito mais vinhos normais do que excelentes ou ruins).
 
 ## Modelagem
 
