@@ -79,8 +79,10 @@ Além das vantagens da ReLU como simplicidade, eficiência computacional e o apr
 Sejam $M, N$ espaços métricos e uma função $f: M \rightarrow N$, dizemos que $f$ é Lipschitz se existir um $L > 0$, chamada constante de Lipschitz, tal que 
 
 ```math 
-$$d(f(x), f(y)) \leq Ld(x, y),$$ quaisquer que sejam $x, y \in M$
+$$d(f(x), f(y)) \leq Ld(x, y),$$ 
 ```
+quaisquer que sejam $x, y \in M$
+
 Lembrando que: 
 
 ⇨ Métrica é uma função $d : M \times M \rightarrow \mathbb{R}$ que associa a cada par ordenado $(x,y) \in M \times M$, um número real $d(x,y)$, chamado distância de $x$ a $y$. 
