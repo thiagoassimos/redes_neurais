@@ -84,10 +84,10 @@ $$d(f(x), f(y)) \leq Ld(x, y),$$ quaisquer que sejam $x, y \in M$
 ⇨ Um Espaço Métrico é um par ordenado $(M,d)$, em que $M$ é um conjunto não vazio e $d$ é uma métrica em $M$. 
 
 ```math
-\begin{itemize}
+$$\begin{itemize}
 \item A constante de Lipschitz para a função ReLU é $L=1$.
 \item Uma função ser Lipschitz é um critério mais forte do que ser contínua, pois toda função Lipschtz é contínua, mas o contrário não é verdade. 
-\end{itemize}
+\end{itemize}$$
 ```
 
 **```Vantagens da utilização em redes neurais```**
