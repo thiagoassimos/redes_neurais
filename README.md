@@ -12,11 +12,11 @@ O algoritmo implementado para treinamento será o **```backpropagation```**.
 
 - camada de entrada: **```ReLu```**;
 - camada oculta: não será implementada, apesar da função generalizar para camadas ocultas, caso queira adicionar posteriormente;
-- camada de saída: **```sigmóide```**.
+- camada de saída: **```Sigmóide```**.
 
 A escolha pela **```ReLu```** na camada de entrada é porque como os neurônios somente são ativados com inputs positivos, então isso impede que todos os neurônios sejam ativados ao mesmo tempo. Um outro ponto importante é que ela torna o treinamento computacionalmente mais eficiente, permitindo um treinamento mais focado, isto é, com neurônios mais especializados.
 
-Na camada de saída a escolha pela **```sigmóide```** se deve ao fato dela transformar a saída da última camada em um valor no intervalo entre 0 e 1, representando uma probabilidade. Como este é um problema de classificação binária, esse valor pode ser interpretado como a probabilidade de pertencer à classe positiva, como dito anteriormente. Além disso a sigmóide é uma função de classe $C^\infty$, ou seja, todas as suas derivadas são contínuas, o que facilita o cálculo dos gradientes durante o treinamento quando se usa, por exemplo, o **```backpropagation```**. Ela também ajuda a evitar o problema de "explodir" gradientes, que pode ocorrer durante o treinamento de redes neurais mais profundas, pois limita a saída entre 0 e 1, evitando esses valores extremamente grandes.
+Na camada de saída a escolha pela **```Sigmóide```** se deve ao fato dela transformar a saída da última camada em um valor no intervalo entre 0 e 1, representando uma probabilidade. Como este é um problema de classificação binária, esse valor pode ser interpretado como a probabilidade de pertencer à classe positiva, como dito anteriormente. Além disso a sigmóide é uma função de classe $C^\infty$, ou seja, todas as suas derivadas são contínuas, o que facilita o cálculo dos gradientes durante o treinamento quando se usa, por exemplo, o **```backpropagation```**. Ela também ajuda a evitar o problema de "explodir" gradientes, que pode ocorrer durante o treinamento de redes neurais mais profundas, pois limita a saída entre 0 e 1, evitando esses valores extremamente grandes.
 
 ## ```Função de otimização```
 
@@ -68,29 +68,31 @@ Uma outra observação é que aumentar a quantidade de neurônios não vai produ
 
  ## Apêndice
 
-Aspectos matemáticos sobre a função **```ReLu```**. 
+#### Aspectos matemáticos sobre a função **```ReLu```**. 
 
-Primeiramente, a função ReLU é definida por $$f(x) = \max(0, x).$$
+Primeiramente, definimos ReLU por $$f(x) = \max(0, x).$$
 
-Além das vantagens da ReLU como simplicidade, eficiência computacional e o aprendizado de padrões complexos nos dados devido à sua não linearidade, tem um aspecto que não é muito discutido - o fato da função ReLU ser uma função Lipschitz. Mas o que isso pode agregar nas Redes Neurais? Antes precisamos definir uma função Lipschitz.
+![Alt text](relu.jpeg)
 
-Sejam $M, N$ espaços métricos e uma função $f: M \rightarrow N$ dizemos que $f$ é Lipschitz se existir um $L > 0$, chamada constante de Lipschitz, tal que 
+Além das vantagens da ReLU como simplicidade, eficiência computacional e o aprendizado de padrões complexos nos dados devido à sua não linearidade, tem um aspecto que não é muito discutido - o fato da função ReLU ser uma **```função Lipschitz```**. Mas o que isso pode agregar nas Redes Neurais? Antes precisamos definir uma função Lipschitz.
+
+Sejam $M, N$ espaços métricos e uma função $f: M \rightarrow N$, dizemos que $f$ é Lipschitz se existir um $L > 0$, chamada constante de Lipschitz, tal que 
 ```math 
 $$d(f(x), f(y)) \leq Ld(x, y),$$ quaisquer que sejam $x, y \in M$
 ```
- 
+Lembrando que: 
+
 ⇨ Métrica é uma função $d : M \times M \rightarrow \mathbb{R}$ que associa a cada par ordenado $(x,y) \in M \times M$, um número real $d(x,y)$, chamado distância de $x$ a $y$. 
 
-⇨ Um Espaço Métrico é um par ordenado $(M,d)$, em que $M$ é um conjunto não vazio e $d$ é uma métrica em $M$. 
+⇨ Um espaço métrico é um par ordenado $(M,d)$, em que $M$ é um conjunto não vazio e $d$ é uma métrica em $M$. 
 
 Vale ressaltar que:
-```math
+
 1) A constante de Lipschitz para a função ReLU é $L=1$.
-2) Uma função ser Lipschitz é um critério mais forte do que ser contínua, pois toda função Lipschtz é contínua, mas o contrário não é verdade. 
-```
+2) Uma função ser Lipschitz é um critério mais forte do que ser contínua, pois toda função Lipschitz é contínua, mas o contrário não é verdade. 
 
-**```Vantagens da utilização em redes neurais```**
+**```Vantagens da utilização em Redes Neurais```**
 
-⇨ Estabilidade numérica durante o treinamento de redes neurais, ou seja, pequenas variações nos valores das entradas não resultarão em grandes variações nos valores das saídas. Em outras palavras, como ReLU é uma função Lipschitz, então mesmo que haja pequenas variações nos valores de x, o aumento resultante em $d(f(x), f(y))$ é limitado pela constante $L=1$, garantindo assim que as variações permaneçam controladas.
+⇨ Estabilidade numérica durante o treinamento de redes neurais, ou seja, pequenas variações nos valores das entradas não resultarão em grandes variações nos valores das saídas. Em outras palavras, como ReLU é uma função Lipschitz, então mesmo que haja pequenas variações nos valores de $x$, o aumento resultante em $d(f(x), f(y))$ é limitado pela constante $L=1$, garantindo assim que as variações permaneçam controladas.
 
-⇨ Convergência mais rápida do algoritmo de otimização. Por exemplo, no caso do gradiente descendente, mudanças nos parâmetros do modelo não causarão mudanças drásticas na função de custo devido a ela ser limitada por L=1, isso além de diminuir o número de iterações permite atualizações mais eficientes e tamanhos de passo maiores no algoritmo de otimização.
+⇨ Convergência mais rápida do algoritmo de otimização. Por exemplo, no caso do gradiente descendente, mudanças nos parâmetros do modelo não causarão mudanças drásticas na função de custo devido a ela ser limitada por $L=1$, isso além de diminuir o número de iterações permite atualizações mais eficientes e tamanhos de passo maiores no algoritmo de otimização.
