@@ -88,7 +88,7 @@ $$d(f(x), f(y)) \leq Ld(x, y),$$ quaisquer que sejam $x, y \in M$
 \item A constante de Lipschitz para a função ReLU é $L=1$.
 \item Uma função ser Lipschitz é um critério mais forte do que ser contínua, pois toda função Lipschtz é contínua, mas o contrário não é verdade. 
 \end{itemize}
-``
+```
 
 **```Vantagens da utilização em redes neurais```**
 
