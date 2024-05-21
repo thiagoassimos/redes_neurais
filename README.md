@@ -81,7 +81,7 @@ Sejam $M, N$ espaços métricos e uma função $f: M \rightarrow N$, dizemos que
 ```math 
 $$d(f(x), f(y)) \leq Ld(x, y),$$ 
 ```
-quaisquer que sejam $x, y \in M$
+quaisquer que sejam $x, y \in M$.
 
 Lembrando que: 
 
