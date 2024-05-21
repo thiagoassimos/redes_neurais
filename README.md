@@ -73,9 +73,10 @@ Aspectos matemáticos sobre a função **```ReLu```**.
 Primeiramente, a função ReLU é definida por $$f(x) = max(0, x).$$
 
 ```math
-\begin{theorem}
+\newtheorem{definition}{Definition}[section]
+\begin{definition}
 f(x) = max(0, x)
-\end{theorem}
+\end{definition}
 ```
 
 Além das vantagens da ReLU como simplicidade, eficiência computacional e o aprendizado de padrões complexos nos dados devido à sua não linearidade, tem um aspecto que não é muito discutido - o fato da função ReLU ser uma função Lipschitz. Mas o que isso pode agregar nas Redes Neurais? Antes precisamos definir uma função Lipschitz.
