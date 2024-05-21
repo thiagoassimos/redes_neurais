@@ -75,7 +75,6 @@ Primeiramente, a função ReLU é definida por $$f(x) = max(0, x).$$
 Além das vantagens da ReLU como simplicidade, eficiência computacional e o aprendizado de padrões complexos nos dados devido à sua não linearidade, tem um aspecto que não é muito discutido - o fato da função ReLU ser uma função Lipschitz. Mas o que isso pode agregar nas Redes Neurais? Antes precisamos definir uma função Lipschitz.
 
 Sejam $M, N$ espaços métricos e uma função $f: M \rightarrow N$ dizemos que $f$ é Lipschitz se existir um $L > 0$, chamada constante de Lipschitz, tal que 
-
 ```math 
 $$d(f(x), f(y)) \leq Ld(x, y),$$ quaisquer que sejam $x, y \in M$
 ```
@@ -83,6 +82,7 @@ $$d(f(x), f(y)) \leq Ld(x, y),$$ quaisquer que sejam $x, y \in M$
 ⇨ Métrica é uma função $d : M \times M \rightarrow \mathbb{R}$ que associa a cada par ordenado $(x,y) \in M \times M$, um número real $d(x,y)$, chamado distância de $x$ a $y$. 
 
 ⇨ Um Espaço Métrico é um par ordenado $(M,d)$, em que $M$ é um conjunto não vazio e $d$ é uma métrica em $M$. 
+
 ```math
 \begin{itemize}
 \item A constante de Lipschitz para a função ReLU é $L=1$.
