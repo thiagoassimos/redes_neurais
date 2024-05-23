@@ -68,7 +68,7 @@ Uma outra observação é que aumentar a quantidade de neurônios não vai produ
 
 ## Apêndice
 
-#### Aspectos matemáticos da **```ReLU```**
+#### Aspectos matemáticos da ReLU
 
 Primeiramente, definimos ReLU por $$f(x) = \max(0, x).$$
 
