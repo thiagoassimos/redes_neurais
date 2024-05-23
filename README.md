@@ -66,9 +66,9 @@ Uma outra observação é que aumentar a quantidade de neurônios não vai produ
 
  No caso dos histogramas, podemos dizer que os dados de treino e teste possuem amplitudes semelhantes, indicando que o modelo não está se adaptando demais aos dados de treino. Isso é um bom sinal quando se leva em conta a capacidade de generalização do modelo para novos conjuntos de dados.
 
- ## Apêndice
+## Apêndice
 
-#### Aspectos matemáticos da **```ReLU```**. 
+#### Aspectos matemáticos da **```ReLU```**
 
 Primeiramente, definimos ReLU por $$f(x) = \max(0, x).$$
 
