@@ -10,11 +10,11 @@ O algoritmo implementado para treinamento será o **```backpropagation```**.
 
 ## ```Funções de ativação```
 
-- camada de entrada: **```ReLu```**;
+- camada de entrada: **```ReLU```**;
 - camada oculta: não será implementada, apesar da função generalizar para camadas ocultas, caso queira adicionar posteriormente;
 - camada de saída: **```Sigmóide```**.
 
-A escolha pela **```ReLu```** na camada de entrada é porque como os neurônios somente são ativados com inputs positivos, então isso impede que todos os neurônios sejam ativados ao mesmo tempo. Um outro ponto importante é que ela torna o treinamento computacionalmente mais eficiente, permitindo um treinamento mais focado, isto é, com neurônios mais especializados.
+A escolha pela **```ReLU```** na camada de entrada é porque como os neurônios somente são ativados com inputs positivos, então isso impede que todos os neurônios sejam ativados ao mesmo tempo. Um outro ponto importante é que ela torna o treinamento computacionalmente mais eficiente, permitindo um treinamento mais focado, isto é, com neurônios mais especializados.
 
 Na camada de saída a escolha pela **```Sigmóide```** se deve ao fato dela transformar a saída da última camada em um valor no intervalo entre 0 e 1, representando uma probabilidade. Como este é um problema de classificação binária, esse valor pode ser interpretado como a probabilidade de pertencer à classe positiva, como dito anteriormente. Além disso a sigmóide é uma função de classe $C^\infty$, ou seja, todas as suas derivadas são contínuas, o que facilita o cálculo dos gradientes durante o treinamento quando se usa, por exemplo, o **```backpropagation```**. Ela também ajuda a evitar o problema de "explodir" gradientes, que pode ocorrer durante o treinamento de redes neurais mais profundas, pois limita a saída entre 0 e 1, evitando esses valores extremamente grandes.
 
@@ -68,7 +68,7 @@ Uma outra observação é que aumentar a quantidade de neurônios não vai produ
 
  ## Apêndice
 
-#### Aspectos matemáticos sobre a função **```ReLu```**. 
+#### Aspectos matemáticos sobre a função **```ReLU```**. 
 
 Primeiramente, definimos ReLU por $$f(x) = \max(0, x).$$
 
