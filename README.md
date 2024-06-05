@@ -62,7 +62,7 @@ Um ponto que deve ser relatado para a apresentação dos resultados é que há u
 
 A partir da análise da matriz de confusão podemos inferir que o modelo apresenta bons resultados, com uma taxa total de acerto de **```76,4% (TP+TN)```** e de erro **```23,6% (FP+FN)```**. 
 
-Uma outra observação é que aumentar a quantidade de neurônios não vai produzir melhora nos resultados, pois com **```22```** e **```33 neurônios```** os resultados mantiveram-se foram ligeiramente inferiores a **```11 neurônios```**. 
+Uma outra observação é que aumentar a quantidade de neurônios não vai produzir melhora nos resultados, pois com **```22```** e **```33 neurônios```** os resultados foram ligeiramente inferiores a **```11 neurônios```**. 
 
  No caso dos histogramas, podemos dizer que os dados de treino e teste possuem amplitudes semelhantes, indicando que o modelo não está se adaptando demais aos dados de treino. Isso é um bom sinal quando se leva em conta a capacidade de generalização do modelo para novos conjuntos de dados.
 
